@@ -3,7 +3,7 @@
 import os
 import sys
 
-
+# sample comment
 def main():
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'bagpacker_rest_api.settings')
