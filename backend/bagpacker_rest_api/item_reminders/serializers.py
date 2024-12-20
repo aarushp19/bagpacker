@@ -1,6 +1,8 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
 
+from .models import Description
+
 class RegisterSerializer(serializers.ModelSerializer):
 
     class Meta:
@@ -13,7 +15,13 @@ class RegisterSerializer(serializers.ModelSerializer):
         )
 
         user.set_password(validated_data['password'])
-        
+
         user.save()
 
         return user
+    
+class DescriptionSerializer(serializers.Serializer):
+    text = serializers.CharField(max_length=100)
+
+    def create(self, validated_data):
+        return Description.objects.create(**validated_data)
