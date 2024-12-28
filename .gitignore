@@ -1,1 +1,13 @@
-backend/bagpacker_rest_api/item_reminders/__pycache__/
+backend/bagpacker_rest_api/bagpacker_rest_api/__pycache__/settings.cpython-312.pyc
+backend/bagpacker_rest_api/bagpacker_rest_api/__pycache__/urls.cpython-312.pyc
+backend/bagpacker_rest_api/item_reminders/__pycache__/__init__.cpython-312.pyc
+backend/bagpacker_rest_api/item_reminders/__pycache__/admin.cpython-312.pyc
+backend/bagpacker_rest_api/item_reminders/__pycache__/apps.cpython-312.pyc
+backend/bagpacker_rest_api/item_reminders/__pycache__/models.cpython-312.pyc
+backend/bagpacker_rest_api/item_reminders/__pycache__/serializers.cpython-312.pyc
+backend/bagpacker_rest_api/item_reminders/__pycache__/urls.cpython-312.pyc
+backend/bagpacker_rest_api/item_reminders/__pycache__/views.cpython-312.pyc
+backend/bagpacker_rest_api/item_reminders/migrations/__pycache__/__init__.cpython-312.pyc
+backend/bagpacker_rest_api/item_reminders/migrations/__pycache__/0001_initial.cpython-312.pyc
+backend/bagpacker_rest_api/item_reminders/migrations/__pycache__/0002_description_owner.cpython-312.pyc
+backend/bagpacker_rest_api/item_reminders/migrations/__pycache__/0003_alter_description_owner.cpython-312.pyc
