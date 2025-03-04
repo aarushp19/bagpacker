@@ -44,3 +44,12 @@ class DescriptionListView(APIView):
         descriptions = Description.objects.filter(owner=request.user)
         data = DescriptionSerializer(descriptions, many=True).data
         return Response(data)
+    
+class UserListView(APIView):
+    authentication_classes = []
+    permission_classes = []
+
+    def get(self, request):
+        users = User.objects.all()
+        data = RegisterSerializer(users, many=True).data
+        return Response(data)

@@ -3,7 +3,6 @@ import React, { useState } from "react";
 function LoginPage() {
   const [formData, setFormData] = useState({
     username: "",
-    email: "",
     password: "",
     confirmPassword: "",
   });
@@ -20,11 +19,6 @@ function LoginPage() {
   const validate = () => {
     const newErrors = {};
     if (!formData.username) newErrors.username = "Username is required.";
-    if (!formData.email) {
-      newErrors.email = "Email is required.";
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Invalid email address.";
-    }
     if (!formData.password) {
       newErrors.password = "Password is required.";
     } else if (formData.password.length < 6) {
@@ -47,10 +41,10 @@ function LoginPage() {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            "Accept": "application/json"
           },
           body: JSON.stringify({
             username: formData.username,
-            email: formData.email,
             password: formData.password,
           }),
         });
@@ -61,13 +55,12 @@ function LoginPage() {
           throw new Error(data.detail || "Registration failed");
         }
 
-        localStorage.setItem("accessToken", data.access_token);
+        localStorage.setItem("accessToken", data.access);
         console.log("Registration successful", data);
 
         setSubmitted(true);
         setFormData({
           username: "",
-          email: "",
           password: "",
           confirmPassword: "",
         });
@@ -152,7 +145,7 @@ function LoginPage() {
 
   return (
     <div style={styles.container}>
-      <h2 style={styles.glitchEffect}>CYBER REGISTRATION</h2>
+      <h2 style={styles.glitchEffect}>REGISTRATION</h2>
       {submitted && <p style={styles.successText}>✅ Registration Successful! ✅</p>}
       {apiError && <p style={styles.errorText}>⚠️ {apiError}</p>}
       <form onSubmit={handleSubmit}>
@@ -166,17 +159,6 @@ function LoginPage() {
             style={styles.input}
           />
           {errors.username && <p style={styles.errorText}>{errors.username}</p>}
-        </div>
-        <div>
-          <label>Email:</label>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            style={styles.input}
-          />
-          {errors.email && <p style={styles.errorText}>{errors.email}</p>}
         </div>
         <div>
           <label>Password:</label>
